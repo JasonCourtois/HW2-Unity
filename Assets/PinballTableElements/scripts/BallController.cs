@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
         if (_start.IsPressed())
         {
             _start.Disable();
-            _rb.AddForce(Vector3.left * (StartForce + Random.Range(-500, 501)));
+            _rb.AddForce(Vector3.left * StartForce);
         }
 
         if (transform.position.y < -6)
