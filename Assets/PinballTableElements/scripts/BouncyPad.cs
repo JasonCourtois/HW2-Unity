@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class BouncyPad : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private BallController _ballController;
+    [SerializeField] private float BounceForce = 100;
+
+    private void Awake()
     {
-        
+        _ballController = GameObject.FindGameObjectWithTag("Ball").GetComponent<BallController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag != "Ball") return;
+        _ballController.ApplyBallDirectionForce(transform.right, BounceForce);
     }
 }

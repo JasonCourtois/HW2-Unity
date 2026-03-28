@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/pinball.unity
+    guid: 41f4f974cf0a8411cbaf3ae567137a37
+  - enabled: 1
+    path: Assets/gameOver.unity
+    guid: 8806ca5c522d7482b926fe2e99a3dde7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -44,6 +44,6 @@ public class Flipper : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         if (!_flipperInput.IsPressed() || collision.gameObject.tag != "Ball") return;
-        _ballController.ApplyBallForce(collision, FlipperForce);
+        _ballController.ApplyBallCollisionForce(collision, FlipperForce);
     }
 }

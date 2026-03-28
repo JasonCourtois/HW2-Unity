@@ -1,0 +1,8 @@
+AI Usage:
+
+I did use Copilot (using Claude Haiku 4.5) to help with some vector math.
+Specifically in BallController.cs, Haiku generated the lines of code that applied a force at an angle aligned with the table to make the ball fall faster.
+I also had Haiku generate some code in BallController.cs in the ApplyBallCollisionForce function in order to find the direction the force should be applied using a collision point.
+
+PLEASE NOTE: This Asset package will not work correctly if the Input System package is not installed.
+ALSO NOTE: In order for game over transition to work, the scenes must be added to the build profiles in unity.

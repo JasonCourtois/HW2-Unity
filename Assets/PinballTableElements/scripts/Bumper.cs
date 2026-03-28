@@ -13,6 +13,6 @@ public class Bumper : MonoBehaviour
   private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "Ball") return;
-        _ballController.ApplyBallForce(collision, BumperForce);
+        _ballController.ApplyBallCollisionForce(collision, BumperForce);
     }
 }

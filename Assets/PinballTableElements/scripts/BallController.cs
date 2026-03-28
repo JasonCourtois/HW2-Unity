@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
@@ -30,20 +31,36 @@ public class BallController : MonoBehaviour
             _start.Disable();
             _rb.AddForce(Vector3.left * (StartForce + Random.Range(-500, 501)));
         }
+
+        if (transform.position.y < -6)
+        {
+            TriggerGameOver();
+        }
     }
 
-  private void FixedUpdate()
-  {
-    float angleInRadians = TableAngle * Mathf.Deg2Rad;
-    Vector3 direction = new Vector3(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians), 0);
-    _rb.AddForce(direction * TableGravity);
-  }
+    private void FixedUpdate()
+    {
+        _rb.AddForce(Vector3.down * 30.19f);
+        float angleInRadians = TableAngle * Mathf.Deg2Rad;
+        Vector3 direction = new Vector3(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians), 0);
+        _rb.AddForce(direction * TableGravity);
+    }
 
-  public void ApplyBallForce(Collision collision, float BumperForce)
+    public void ApplyBallCollisionForce(Collision collision, float bumperForce)
     {
         ContactPoint contact = collision.contacts[0];
         Vector3 direction = (transform.position - contact.point).normalized;    // Find the direction away from bumper using the balls position and the contact point of collision
 
-        _rb.AddForce(direction * BumperForce);
+        _rb.AddForce(direction * bumperForce);
+    }
+
+    public void ApplyBallDirectionForce(Vector3 direction, float force)
+    {
+        _rb.AddForce(direction * force);
+    }
+
+    private void TriggerGameOver()
+    {
+        SceneManager.LoadScene("gameOver");
     }
 }
