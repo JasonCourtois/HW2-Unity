@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class BallController : MonoBehaviour
 {
     private Rigidbody _rb;
-    private InputAction _reset;
     private InputAction _start;
     [SerializeField] private float StartForce = 9000;
     [SerializeField] private float TableAngle = -13;
@@ -14,19 +13,13 @@ public class BallController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _reset = InputSystem.actions.FindAction("Reset");
         _start = InputSystem.actions.FindAction("Start");
 
     }
 
     private void Update()
     {
-        if (_reset.IsPressed())
-        {
-            transform.position = new Vector3(9.55f, -1.93f, -9.36f);
-            _start.Enable();
-        }
-        else if (_start.IsPressed())
+        if (_start.IsPressed())
         {
             _start.Disable();
             _rb.AddForce(Vector3.left * (StartForce + Random.Range(-500, 501)));

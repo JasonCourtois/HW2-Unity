@@ -34,15 +34,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reset",
-                    "type": "Button",
-                    "id": "881a7bad-d044-4bda-9855-059bc68f5ff7",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Start",
                     "type": "Button",
                     "id": "cda8ca9d-6dfa-4354-ba0e-d5c4acbf5863",
@@ -83,17 +74,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e9cbad5c-5725-4473-b102-7fd1c71eafa2",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
